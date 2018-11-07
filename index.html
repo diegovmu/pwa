@@ -1,14 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>App do Diego</title>
-    <link rel="manifest" href="manifest.json" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste</title>
+  <link rel="stylesheet" type="text/css" href="styles/inline.css">
+
+  <!-- TODO add manifest here -->
+  <link rel="manifest" href="manifest.json">
+  <script>
+if ('serviceWorker' in navigator ) {
+  
+  navigator.serviceWorker.register('service-worker.js', {
+    scope: './'
+  }).then(function(registration) {
+    if (typeof registration.update == 'function') {
+      registration.update();
+    }
+  }).catch(function(e) {
+    console.error('Error during service worker registration:', e);
+  });
+  
+}
+  </script>
 </head>
 <body>
-    E ai
-    <br />
+    <h1>Olá Mundo</h1>
+
+
 </body>
 </html>
